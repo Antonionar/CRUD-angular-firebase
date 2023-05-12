@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "empleados-81a42": {
+      "hosting": {
+        "Empleados": [
+          "empleados-81a42"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "empleados-81a42"
+  }
+}

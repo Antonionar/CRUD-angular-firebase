@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="caed-body">
+      <span class="h3">Listado de empleados</span>
+      <button class="btn btn-dark btn-lg float-end" [routerLink]="rutaEditar">Agregar</button>
+      <h5 style="margin-top: 30px;" *ngIf="empleados.length == 0">No hay datos para mostrar</h5>
+      <table *ngIf="empleados.length >0" class="table table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Salario</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Empleado of empleados">
+            <td>{{ Empleado.nombre}}</td>
+            <td>{{ Empleado.apellido}}</td>
+            <td>{{ Empleado.documento}}</td>
+            <td>{{ Empleado.salario | currency}}</td>
+            <td><i class="fa-solid fa-pen-to-square text-info me-4" [routerLink]="['/editEmpleado/', Empleado.id]"></i>
+              <i (click)="eliminarEmpleado(Empleado.id)" class="fa-sharp fa-solid fa-trash text-danger"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
